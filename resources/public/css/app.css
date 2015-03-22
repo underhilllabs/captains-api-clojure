@@ -1,0 +1,47 @@
+.voteButton {
+  height: 2em;
+  width: 4em;
+  font-size: 200%;
+}
+div#newCaptainForm {
+  border: 1px gray dashed;
+  padding: 1em;
+  margin-top: 2em;
+}
+div.cptn-div {
+  border: 1px solid #ccc;
+  padding: 1em;
+  background: #eee;
+}
+div#captains {
+  margin-left: 2em;
+}
+
+ul#captains-list {
+  padding-top: 1em;
+}
+ul#captains-list li {
+  list-style-type: none;
+  text-align: left;
+}
+
+ul#menu li {
+  list-style-type: none;
+  text-align: left;
+  padding-bottom: 1em;
+}
+ul#menu li a {
+  padding: .6em;
+}
+ul#menu li div {
+  font-size: 64px;
+  line-height: 64px;
+}
+ul#menu li p {
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+h2 span {
+  padding: 0.5em 1em;
+}
