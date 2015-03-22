@@ -21,12 +21,11 @@
     (mc/update db "captains" {:name captain} {$inc {:votes 1}})))
 
 (defn add-captain
-  [params]
-  (let [{:keys [name pic-url source]} params
-        conn  (mg/connect)
+  [cappy]
+  (let [conn  (mg/connect)
         db (mg/get-db conn "captains")
         coll "captains"]
-    (mc/save-and-return db coll {:name name :votes 1 :image pic-url :source source})))
+    (mc/save-and-return db coll cappy)))
 
 (defn get-captains
   []
@@ -42,7 +41,7 @@
 (defroutes app
   (GET "/" [] (clojure.java.io/resource "public/index.html"))
   (GET "/api/captains" [] (get-captains))
-  (POST "/api/captain" {params :params} (add-captain params))
+  (POST "/api/captain" [cappy] (add-captain cappy))
   (resources "/")
   (not-found "not found"))
 
